@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.long_card_wrapper {
+  font-size: 12;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vh;
+  background: #ffffff;
+  padding: 5px;
+}
+
+.long_card_list_wrapper {
+  margin: auto;
+  height: 60vh;
+  width: 100vh;
+  overflow-y: scroll;
+}
+
+.accepted {
+  background: #0b6e2c;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+} 
+
+.user_details_wrapper {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  width: 100vh;
+  margin: auto;
+}
+
+img {
+  align-self: center;
+}
+
+.details_headers {
+  font-weight: 100;
+  font-size: 24;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.cardHeaders {
+  font-weight: 100;
+  font-size: 12px;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.main_page_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.details_box {
+  background-color: #ffffff;
+  width: 120vh;
+  margin: 10px;
+
+}
+
+.horizontal_divider {
+  height: 1vh;
+  background-color: #7f7d7d;
+}
+
+body {
+  background: #1C8EF9 !important;
+  min-height: 100vh;
+  display: flex;
+  font-weight: 400;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+body, html, .App, #root, .auth-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.card_list_wrapper {
+  margin: auto;
+  height: 90vh;
+  width: 70vh;
+  overflow-y: scroll;
+}
+
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.card_wrapper {
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  width: 70vh;
+  justify-content: left;
+  margin: auto;
+}
+
+.in_card_wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 100vh;
+  margin: 5px;
+  justify-content: left;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+}
+
+.auth-inner {
+  width: 100vh    ;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #167bff;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 400;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
 }
