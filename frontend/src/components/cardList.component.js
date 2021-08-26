@@ -1,20 +1,33 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import logo from './logo.svg';
 import Card from "./card.component";
-
-export default class CardList extends Component {
-    render() { 
-        const numbers = [1, 2, 3, 4, 5, 6 ,7];
-        const listItems = numbers.map((number) =>
-            <div>
-            <Card title = "IC Lab Experiment" type = "Questionarre" datetime = "null" rewardeffort = "null"/>
-                <div className = 'horizontal_divider'/>
-            </div>
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+function CardList(props) {
+    
+    
+        const [announcements, SetAnnouncements] = useState([])
+        
+        useEffect(() => {
+            fetch("http://127.0.0.1:8000/api/posts/")
+            .then(response => response.json())
+            .then(data => SetAnnouncements(data))
+          },[])
+        const listItems = announcements.map((announcement) =>
+            <Link to = {'/details/'+announcement.id}>
+                <div>
+                    <Card title = {announcement.title} type = {announcement.type} datetime = {announcement.date} 
+                    rewardeffort = {announcement.reward}/>
+                    <div className = 'horizontal_divider'/>
+                </div>
+            </Link>
         ); 
         return (
             <div className = 'card_list_wrapper'>
-                {listItems}
+                <BrowserRouter>
+                    {listItems}
+                </BrowserRouter>
             </div>
         );
-    }
+    
 }
+export default CardList

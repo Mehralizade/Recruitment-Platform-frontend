@@ -1,7 +1,121 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 
+.choice-outer-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.choice-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background: #ffffff;
+  padding: 10vh;
+  transition: all .3s;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.login-page {
+  padding: 15%;
+}
+
+.signup-page {
+  padding: 4%;
+}
+
+.auth-inner {
+  width: 100vh;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+
+.user-details-wrapper {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  padding: 1%;
+}
+
+.experiment-details-wrapper {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+  padding: 1%;
+}
+
+.rating-wrapper {
+  height: 60px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.toggler-wrapper {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+li {
+  cursor: pointer;
+}
+
+.experiment-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding: 1%;
+}
+
+.accepted {
+  background-color: #0b5311;
+  color: #ffffff;
+}
+
+.applied {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.rejected {
+  background-color: #861717;
+  color: #ffffff;
+}
+
+
+/* Not Done */
+
 * {
   box-sizing: border-box;
+}
+
+.mypage_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage_inner_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.custom {
+  width: 35vh;
 }
 
 .long_card_wrapper {
@@ -60,9 +174,8 @@ img {
 
 .details_box {
   background-color: #ffffff;
-  width: 120vh;
+  width: 60vh;
   margin: 10px;
-
 }
 
 .horizontal_divider {
@@ -89,7 +202,6 @@ body, html, .App, #root, .auth-wrapper {
   width: 70vh;
   overflow-y: scroll;
 }
-
 
 .navbar-light {
   background-color: #ffffff;
@@ -122,15 +234,11 @@ body, html, .App, #root, .auth-wrapper {
   text-align: left;
 }
 
-.auth-inner {
-  width: 100vh    ;
-  margin: auto;
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all .3s;
+.choice-wrapper > h1 {
+  text-align: center;
 }
+
+
 
 .auth-wrapper .form-control:focus {
   border-color: #167bff;
@@ -146,17 +254,4 @@ body, html, .App, #root, .auth-wrapper {
 
 .custom-control-label {
   font-weight: 400;
-}
-
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
-  margin: 0;
-}
-
-.forgot-password a {
-  color: #167bff;
 }

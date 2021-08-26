@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 
 export default class SignUp extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            type: props.type
+        }
+    }
     render() {
         return (
             <form>
-                <h3>Sign Up</h3>
+                <h3>{this.state.type} Sign Up</h3>
 
                 <div className="form-group">
                     <label>First name</label>
