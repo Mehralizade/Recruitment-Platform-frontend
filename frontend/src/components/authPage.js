@@ -25,11 +25,11 @@ function AuthPage(props) {
 
             <div className="auth-wrapper">
                 <div className="auth-inner">
-                <Switch>
-                    <Route exact path='/' component={Login} />
-                    <Route path={"/login-" + props.type} render = {() => <Login type = {props.type} />} />
-                    <Route path={"/signup-" + props.type} render = {() => <SignUp type = {props.type} />} />
-                </Switch>
+                    <Switch>
+                        <Route exact path='/' component={Login} />
+                        <Route path={"/login-" + props.type} render = {() => <Login type = {props.type} />} />
+                        <Route path={"/signup-" + props.type} render = {() => <SignUp type = {props.type} />} />
+                    </Switch>
                 </div>
             </div>
         </div>
