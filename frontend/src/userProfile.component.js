@@ -13,8 +13,8 @@ export default class UserProfile extends Component {
     }
     render() {
         return (
-            <div className='container' style={{margin:'auto', width:'50%'}}>
-                <div className="card mb-3" style={{maxWidth: '540px', border:'none'}}>
+            <div className = 'user-profile-wrapper'>
+                <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
                     <img src={this.state.imgUrl} className="img-fluid rounded-start" alt="..."/>

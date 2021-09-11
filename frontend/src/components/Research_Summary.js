@@ -1,13 +1,15 @@
 import React from 'react';
-import UserDetails from './userDetails.component';
-import RatingComp from './rating.component';
 import UserCard from './userCard.component';
 
 function Research_Summary(props) {
+    const numbers = [0, 1, 2, 3, 4];
+    const userCardList = numbers.map((number) => 
+      <UserCard />
+    )
     return (
       <div className = 'research-summary'>
-        <div className='container' style={{margin:'auto', width:'50%'}}>
-            <div className="card mb-3" style={{maxWidth: '540px', border:'none'}}>
+        <div className='user-profile-wrapper'>
+            <div className="card mb-3" >
               <div className="row g-0">
                 <div className="col-md-4">
                   <img src={props.imgUrl} className="img-fluid rounded-start" alt="..."/>
@@ -27,7 +29,7 @@ function Research_Summary(props) {
 
         <hr />
 
-        <UserCard />
+        {userCardList}
 
       </div>
     )

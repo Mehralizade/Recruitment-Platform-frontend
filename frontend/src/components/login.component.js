@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 export default class Login extends Component {
     constructor(props){
+        console.log('Hello')
         super(props);
         this.state = {
             type: props.type

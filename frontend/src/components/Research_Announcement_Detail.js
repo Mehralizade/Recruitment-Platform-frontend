@@ -1,9 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useParams } from 'react-router';
-<<<<<<< HEAD
-=======
-import BulletinBoard from './BulletinBoard'
->>>>>>> abd81013300806364607903c3a11024a9b1c4f7c
+
 function Research_Announcement_Detail(props) {
 
     const { id }= useParams();

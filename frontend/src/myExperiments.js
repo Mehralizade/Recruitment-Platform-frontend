@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect, } from "react";
+import React from "react";
 import Researcher_Profile from "./components/Researcher_Profile";
 
 export default function MyExperiments(props) {
@@ -9,7 +9,9 @@ export default function MyExperiments(props) {
             
             <hr />
 
-            {props.experimentList}
+            <div className = 'card_list_wrapper'>
+                {props.experimentList}
+            </div>
 
         </div>
     );
