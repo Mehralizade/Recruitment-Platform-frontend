@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import UserDetails from './userDetails.component';
 import RatingComp from './rating.component';
@@ -18,14 +19,35 @@ export default function UserCard() {
       );
     return (
         <div>
+=======
+import React, { useState } from 'react';
+import UserDetails from './userDetails.component';
+import RatingComp from './rating.component';
+
+
+export default function UserCard() {
+    const [toggle, setToggle] = useState(true);
+    const toggleChecked = () => setToggle(toggle => !toggle);
+    return (
+        <div className = 'user-card-wrapper'>
+>>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
             <div className = 'toggler-wrapper' onClick = {toggleChecked}>
                 {toggle && 'User_ID Details'}
                 {!toggle && 'User_ID Rating'}
             </div>
             <div>
+<<<<<<< HEAD
                 {toggle && applicants}
+=======
+                {toggle && <UserDetails />}
+>>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
                 {!toggle && <RatingComp />}
             </div>
         </div>
     )
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
