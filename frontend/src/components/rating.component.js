@@ -1,64 +1,5 @@
 import React, {useState} from 'react'
 
-<<<<<<< HEAD
-import { Rating } from 'react-simple-star-rating'
-
-export default function MyComponent() {
-  const [rating, setRating] = useState(0)
-  const [rating2, setRating2] = useState(0)
-  const [rating3, setRating3] = useState(0)
- 
-
-  // Catch Rating value
-  const handleRating = (rate) => {
-    setRating(rate)
-    
-  }
-  const handleRating2 = (rate) => {
-    setRating2(rate)
-    
-  }
-  const handleRating3 = (rate) => {
-    setRating3(rate)
-      
-  }
- 
-  const overall_rating = Math.floor((rating+rating2+rating3)/3)
-  function SubmitHandler(event){
-      event.preventDefault();
-      
-
-      const RatingData = {
-          criteria1: (rating),
-          criteria2: (rating2),
-          criteria3: (rating3),
-          overall_rating:(overall_rating),
-      }
-
-      fetch('http://127.0.0.1:8000/api/ratings/',
-    {
-      method: 'POST',
-      body: JSON.stringify(RatingData),
-      headers: {
-        'Content-Type':'application/json',
-      } 
-    })
-      console.log(RatingData)
-
-  }
-
-  return (
-    <div className='App'>
-        <form onSubmit = {SubmitHandler}>
-      <p>Criteria 1: </p><Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
-     <p>Criteria2:</p> <Rating onClick={handleRating2} ratingValue={rating2} /* Rating Props */ />
-     <p>Criteria3: </p> <Rating onClick={handleRating3}  ratingValue={rating3} /* Rating Props */ />
-     <button className='btn btn-success'>Rate</button>
-     </form>
-    </div>
-  )
-}
-=======
  import { Rating } from 'react-simple-star-rating'
 
  export default function RatingComp() {
@@ -118,4 +59,3 @@ export default function MyComponent() {
      </div>
    )
  }
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332

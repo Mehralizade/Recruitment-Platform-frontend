@@ -1,17 +1,5 @@
 import React from 'react';
 import UserCard from './userCard.component';
-<<<<<<< HEAD
- 
-function Research_Summary(props) {
- 
-  
-
-  
-    return (
-      <div className = 'research-summary'>
-        <div className='container' style={{margin:'auto', width:'50%'}}>
-            <div className="card mb-3" style={{maxWidth: '540px', border:'none'}}>
-=======
 
 function Research_Summary(props) {
     const numbers = [0, 1, 2, 3, 4];
@@ -22,7 +10,6 @@ function Research_Summary(props) {
       <div className = 'research-summary'>
         <div className='user-profile-wrapper'>
             <div className="card mb-3" >
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
               <div className="row g-0">
                 <div className="col-md-4">
                   <img src={props.imgUrl} className="img-fluid rounded-start" alt="..."/>
@@ -38,14 +25,6 @@ function Research_Summary(props) {
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
-        </div>
- 
-        <hr />
- 
-        <UserCard />
-=======
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
         </div>
 
         <hr />

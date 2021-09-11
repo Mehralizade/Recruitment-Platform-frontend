@@ -204,14 +204,9 @@ img {
 
 .details_box {
   background-color: #ffffff;
-<<<<<<< HEAD
   width: 100%;
   margin-right: 15%;
 
-=======
-  width: 60vh;
-  margin: 10px;
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
 }
 
 .horizontal_divider {
@@ -259,11 +254,7 @@ body, html, .App, #root, .auth-wrapper {
   flex-direction: column;
   background-color: #ffffff;
   width: 80%;
-<<<<<<< HEAD
   
-=======
-  margin: 5px;
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
   justify-content: left;
 }
 

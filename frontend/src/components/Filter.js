@@ -1,5 +1,4 @@
 import React, {useRef, useEffect, useState} from 'react'
-import CardList from './cardList.component';
 function Filter(props) {
   const [posts, setPosts] = useState([])
   const AscendingRef=useRef();

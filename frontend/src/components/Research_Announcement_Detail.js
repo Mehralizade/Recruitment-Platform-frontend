@@ -1,11 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import { useParams } from 'react-router';
-<<<<<<< HEAD
 import BulletinBoard from './BulletinBoard'
 import logo from './logo.svg';
-=======
-
->>>>>>> cc5c9727b3408ecaa17239d5aa7575413f573332
 function Research_Announcement_Detail(props) {
     function ApplyHandler(event){
         event.preventDefault();
