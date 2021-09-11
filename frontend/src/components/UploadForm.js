@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 function UploadForm(props) {
     
 
@@ -16,7 +16,7 @@ function UploadForm(props) {
   const SettingRef = useRef();
   const ParticipantNumberRef = useRef();
 
-
+   
     function SubmitHandler(event){
       event.preventDefault();
     
@@ -67,8 +67,24 @@ function UploadForm(props) {
 
     return (
       
-        <div className='container' style={{margin:'auto'}}>
-          
+        <div>
+           <BrowserRouter><nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div className="container">
+      <Link className="navbar-brand" to={"/login-" + props.type}>NoARA</Link>
+      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+              <Link className="nav-link" to={"/login-" + props.type}>Login</Link>
+          </li>
+          <li className="nav-item">
+              <Link className="nav-link" to={"/signup-" + props.type}>Sign up</Link>
+          </li>
+          </ul>
+      </div>
+      </div>
+  </nav>
+  </BrowserRouter>
+  <div className='container' style={{marginLeft:'auto', width:'50%', marginTop:'10%'}}>
         <div className='col-8'>
           
         
@@ -92,11 +108,11 @@ function UploadForm(props) {
     <hr></hr>
   <div className="col-md-4">
     <label for="Date" className="form-label">Date</label>
-    <input type="date" className="form-control" ref={DateRef} id="Date" placeholder="Apartment, studio, or floor"/>
+    <input type="date" className="form-control" ref={DateRef} id="Date" placeholder=""/>
   </div>
   <div className="col-md-4">
     <label for="Time" className="form-label">Time</label>
-    <input type="text" className="form-control" ref={TimeRef} id="Time" placeholder="Apartment, studio, or floor"/>
+    <input type="text" className="form-control" ref={TimeRef} id="Time" placeholder=""/>
   </div>
   <div className="col-md-4">
     <label for="Location" className="form-label">Location</label>
@@ -148,6 +164,7 @@ function UploadForm(props) {
     <button type="submit" className="btn btn-primary">Submit</button>
   </div>
 </form>
+</div>
 </div>
 </div>
        

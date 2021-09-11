@@ -6,7 +6,7 @@ export default class Card extends Component {
         super(props);
         this.state = {
             title: this.props.title,
-            type: this.props.type,
+            type: this.props.exp_type,
             datetime: this.props.datetime,
             rewardeffort: this.props.rewardeffort,
             location: this.props.location,
@@ -16,8 +16,8 @@ export default class Card extends Component {
     render() {  
         return (
         
-            <div className = 'card_wrapper'>
-               <div className="card mb-3" style={{maxWidth: '540px'}}>
+           
+               <div className="card mb-1" style={{maxWidth: '540px;', border:'1px gray solid'}}>
   <div className="row g-0">
     <div className="col-md-4">
                 <img src = {logo} width = "100px" height = "100px" />
@@ -26,11 +26,11 @@ export default class Card extends Component {
                 <div className = 'in_card_wrapper'>
                     <h5 style={{textAlign:'left'}}>{this.state.title}</h5>
                     <hr></hr>
-                    <h6 className = 'cardHeaders' style={{textAlign:'left'}}><strong>Type: </strong> {this.state.type}</h6>
-                    <h6 className = 'cardHeaders' style={{textAlign:'left'}}>Date: {this.state.datetime}</h6>
-                    <h6 className = 'cardHeaders' style={{textAlign:'left'}}>Time: {this.state.time}</h6>
-                    <h6 className = 'cardHeaders' style={{textAlign:'left'}}>Location: {this.state.location}</h6>
-                    <h6 className = 'cardHeaders' style={{textAlign:'left'}}>Reward: {this.state.rewardeffort} Won</h6>
+                    <h6 className = 'cardHeaders' style={{textAlign:'left', color:'black'}}>Type: {this.state.type}</h6>
+                    <h6 className = 'cardHeaders' style={{textAlign:'left', color:'black'}}>Date: {this.state.datetime}</h6>
+                    <h6 className = 'cardHeaders' style={{textAlign:'left', color:'black'}}>Time: {this.state.time}</h6>
+                    <h6 className = 'cardHeaders' style={{textAlign:'left', color:'black'}}>Location: {this.state.location}</h6>
+                    <h6 className = 'cardHeaders' style={{textAlign:'left', color:'black'}}>Reward: {this.state.rewardeffort} Won</h6>
                     <hr></hr>
                     <div className="progress" style = {{height: '10px'}}>
                         <div className="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -39,7 +39,7 @@ export default class Card extends Component {
                     </div>
                     </div>
                 </div>
-            </div>
+          
             
         );
     }

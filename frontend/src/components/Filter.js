@@ -1,49 +1,92 @@
-import React, {useRef} from 'react'
-
-function Filter() {
+import React, {useRef, useEffect, useState} from 'react'
+import CardList from './cardList.component';
+function Filter(props) {
+  const [posts, setPosts] = useState([])
   const AscendingRef=useRef();
-  function Handler(event){
-    event.preventDefault();
+  const SettingRef = useRef();
+  const ValueRef = useRef();
   
-  console.log(AscendingRef.current.value)}
+  
+
+
+  function Handler(event){
+    
+    event.preventDefault();
+    
+    const enteredAscending = AscendingRef.current.value
+   const  enteredOnline = SettingRef.current.value
+    const enteredValue = ValueRef.current.value
+
+    const FilterData = {
+      setting: enteredOnline,
+      date: enteredValue,
+      reward: enteredAscending,
+      
+  }
+  console.log('http://127.0.0.1:8000/api/posts?reward='+FilterData.reward+"&"+"setting="+FilterData.setting)
+  fetch('http://127.0.0.1:8000/api/posts?reward='+FilterData.reward+"&"+"setting="+FilterData.setting).
+  then(response => response.json()).then(data=>props.data(data))
+
+  
+
+
+
+  }
+  
+
+  
     return (
-        <div className='container' style={{margin:'2%'}}>
-            <div className='col-9'>
-            <div className="row g-3">
+        <div className='container' style={{marginLeft:'50%', marginBottom:'2%',}}>
+            
+          
             <form onSubmit={Handler}>
-                <div className='col-md-2'>
+            <div className='col-12'>
+              
+            <div className='row'>
+            
                
-          <input type="checkbox" className="btn-check" id="btn-check-outlined" autocomplete="off"/>
-<label className="btn btn-outline-success" for="btn-check-outlined">Online</label>
+           
+                <div className='col-md-4'>
+                
+               <div className='btn-group'>
+
+                <select class="form-select" ref={SettingRef} aria-label="Default select example">
+  
+  <option value="Online" >Online</option>
+  <option value="All">All</option>
+</select>
 </div>
- <div className='col-md-2'>
+</div>
+ <div className='col-md-4'>
 <div className="btn-group">
 
   <select class="form-select" aria-label="Default select example">
   
-  <option value="1">3 days </option>
-  <option value="2">One week</option>
-  <option value="3">One months</option>
+  <option value="3" ref={ValueRef}>3 days</option>
+  <option value="7" ref={ValueRef}>One week</option>
+  
 </select>
   </div>
 </div>
-<div className='col-md-2'>
+<div className='col-md-4'>
 <div className="btn-group">
   
   
  
-  <select class="form-select" aria-label="Default select example">
-  <option selected>Date</option>
-  <option value="Ascending" ref={AscendingRef}>Ascending </option>
+  <select class="form-select" ref={AscendingRef} aria-label="Default select example">
+  <option selected>Reward</option>
+  <option value="Ascending" >Ascending</option>
   <option value="Descending" ref={AscendingRef}>Descending</option>
 </select>
-<button className='btn btn-sucess'>Apply</button>
+<button className='btn btn-success'>Apply</button>
   </div>
 </div>
+</div>
+</div>
 </form>
+
 </div>
-</div>
-</div>
+
         
     )
 }
