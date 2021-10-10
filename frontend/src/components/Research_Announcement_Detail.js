@@ -12,12 +12,13 @@ function Research_Announcement_Detail(props) {
         props.data.applicants.push(authState.userId)
         var updated_data = props.data
                  
-       
+        console.log(updated_data)
       
         fetch('http://127.0.0.1:8000/api/posts/'+props.id+'/',
     {
-      method: 'PUT',
-      body: JSON.stringify({updated_data}),
+      method: 'PATCH',
+      body: JSON.stringify({applicants:
+        authState.userId}),
       headers: {
         'Content-type':'application/json',
       } 
