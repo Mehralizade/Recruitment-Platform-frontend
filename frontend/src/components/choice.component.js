@@ -8,12 +8,12 @@ export default class Choice extends Component {
                 <BrowserRouter>
                     <div className = 'choice-wrapper'>
                         <h1>What do you want to do?</h1>
-                        <Link className = 'choice-link-left' to = "/login-Researcher">
-                            <button type="submit" className="custom btn btn-primary btn-block">Recruit participants</button>
-                        </Link>
-                        <Link className = 'choice-link-right' to = "/login-Participant">
-                            <button type="submit" className="custom btn btn-primary btn-block">Join experiments</button>
-                        </Link>
+                        <div className = 'choice-link-left' to = "/login-Researcher">
+                            <button type="submit" className="custom btn btn-primary btn-block"><a style={{color:'white'}} href='http://localhost:3000/login-researcher'>Recruit participants</a> </button>
+                        </div>
+                        <div className = 'choice-link-right' to = "/login-Researcher">
+                            <button type="submit" className="custom btn btn-primary btn-block"><a style={{color:'white'}} href='http://localhost:3000/login-participant'>Join experiments</a> </button>
+                        </div>
                     </div>
                 </BrowserRouter>
             </div>

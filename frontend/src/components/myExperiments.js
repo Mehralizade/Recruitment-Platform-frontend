@@ -1,5 +1,5 @@
 import React from "react";
-import Researcher_Profile from "./components/Researcher_Profile";
+import Researcher_Profile from "./Researcher_Profile";
 
 export default function MyExperiments(props) {
     return (

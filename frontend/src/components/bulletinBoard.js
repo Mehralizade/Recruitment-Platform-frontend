@@ -1,9 +1,16 @@
 import React, { Component, useState, useEffect, } from "react";
-import CardList from "./cardList.component";
+
 import Research_Announcement_Detail from "./Research_Announcement_Detail";
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Filter from "./Filter";
+import UploadForm from "./UploadForm";
+import MyExperiments from "./myExperiments";
+import { AuthContext } from "../App";
+import Researcher_Profile from "./Researcher_Profile";
+import ResearchersPage from  "./researchersPage"
+import CardList from "./cardList";
 function BulletinBoard(props) {
+    const { state: authState } = React.useContext(AuthContext);
 
     const [bulletinAnnouncements, SetBulletinAnnouncements] = useState([])
     useEffect(() => {
@@ -18,31 +25,50 @@ function BulletinBoard(props) {
       <div>
         <BrowserRouter><nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div className="container">
-      <Link className="navbar-brand" to={"/login-" + props.type}>NoARA</Link>
+      <Link className="navbar-brand" to={"/login-" + props.type}>{authState.username}</Link>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-              <Link className="nav-link" to={"/login-" + props.type}>Login</Link>
-          </li>
-          <li className="nav-item">
-              <Link className="nav-link" to={"/signup-" + props.type}>Sign up</Link>
-          </li>
+              {!authState.isAuthenticated ?
+          <><li className="nav-item">
+                                    <Link className="nav-link" to={"/login-" + props.type}>Login</Link>
+                                </li><li className="nav-item">
+                                        <Link className="nav-link" to={"/signup-" + props.type}>Sign up</Link>
+                                    </li></>
+          : <li className="nav-item">
+          <Link className="nav-link" to={"/my-page" + props.type}>Welcome {authState.username}</Link>
+      </li> 
+}
+{authState.is_researcher ?
+   <> <li className="nav-item">
+          <Link className="nav-link" to={"/my-experiments"}>My experiments</Link>
+      </li> 
+      <li className="nav-item">
+          <Link className="nav-link" to={"/upload"}>Upload</Link>
+      </li></> :   <li className="nav-item">
+          <Link className="nav-link" to={"/login-" + props.type}> Applied Experiments</Link>
+      </li> }
           </ul>
       </div>
       </div>
   </nav>
+  <Switch>
+                        <Route  exact path={"/login-researcher" }  render = {() =>   <CardList />}/>
+                        <Route  exact path={"/login-undefined" }  render = {() =>   <CardList />}/>
+                        <Route  exact path={"/login-participant" }  render = {() =>   <CardList />}/>
+                        <Route path={"/upload"} render = {() => <UploadForm />} />
+                        <Route path={"/my-experiments"} render = {() => <ResearchersPage />} />
+                      
+                    </Switch>
   </BrowserRouter>
         <div className = 'main_page_wrapper'>
-            
-            <CardList />
-           
+            <div className='container'>
+          
+           </div>
             <div className = 'detail_box'>
                
            
          <div className='container' style={{marginTop:'18%', width:'100%', marginRight:'80%'}}>
-       <Research_Announcement_Detail type={'Questionnaire'}  location={'N4'}
-       applicantNumber={44} date={'2022-04-25'} time={'09:00'} dataCollected={'Some info'}
-        description={'Lorem ipsum dolor sit amet, aliquip ex ea commodo in. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} title={'Social Science Experiment'} reward={'2500 Won'}/>
+      
        </div> 
          
           

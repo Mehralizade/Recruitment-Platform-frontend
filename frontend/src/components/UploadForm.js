@@ -1,7 +1,8 @@
 import React, {useRef} from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { AuthContext } from "../App";
 function UploadForm(props) {
-    
+  const { state: authState } = React.useContext(AuthContext);
 
   const TitleRef = useRef();
   const TypeRef = useRef();
@@ -54,13 +55,21 @@ function UploadForm(props) {
       time: EnteredTime,
       location: EnteredLocation,
       additional_info:EnteredAdditionalInfo,
-
+      author: authState.userId,
     };
     console.log(AnnouncementData)
-  props.onAddAnnouncement(AnnouncementData)
-  }
+  //props.onAddAnnouncement(AnnouncementData)
 
-   
+  fetch('http://127.0.0.1:8000/api/posts/',
+  {
+   method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(AnnouncementData),
+        }
+  ).then(response => response.json())
+  .then(data => console.log(data));
+
+      }
 
 
     const ParticipantNumber = useRef()
@@ -68,22 +77,7 @@ function UploadForm(props) {
     return (
       
         <div>
-           <BrowserRouter><nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <div className="container">
-      <Link className="navbar-brand" to={"/login-" + props.type}>NoARA</Link>
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-              <Link className="nav-link" to={"/login-" + props.type}>Login</Link>
-          </li>
-          <li className="nav-item">
-              <Link className="nav-link" to={"/signup-" + props.type}>Sign up</Link>
-          </li>
-          </ul>
-      </div>
-      </div>
-  </nav>
-  </BrowserRouter>
+          
   <div className='container' style={{marginLeft:'auto', width:'50%', marginTop:'10%'}}>
         <div className='col-8'>
           

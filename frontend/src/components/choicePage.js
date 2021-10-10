@@ -8,8 +8,8 @@
             <BrowserRouter>
                 <Switch>
                     <Route exact path = '/' render = {() => <Choice />} />
-                    <Route path = '/login-Researcher' render = {() => <AuthPage type = 'Researcher' />} />
-                    <Route path = '/login-Participant' render = {() => <AuthPage type = 'Participant' />} />
+                    <Route exact path = '/login-Researcher' render = {() => <AuthPage type = 'researcher' />} />
+                    <Route exact path = '/login-Participant' render = {() => <AuthPage type = 'participant' />} />
                 </Switch>
             </BrowserRouter>
         )
