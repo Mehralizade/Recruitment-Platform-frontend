@@ -1,37 +1,52 @@
 import React from 'react';
 import UserCard from './userCard.component';
-
+import {useEffect, useState} from 'react'
+import logo from './logo.svg';
 function Research_Summary(props) {
-    const numbers = [0, 1, 2, 3, 4];
+  /*const [postData, setPostData] = useState([])
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/posts/"+props.id)
+    .then(response => response.json())
+    .then(data => setPostData(data))
+  },[])*/
+  const postId = props.id
+  const numbers=props.applicants
     const userCardList = numbers.map((number) => 
-      <UserCard />
+      <UserCard postId={postId} id={number.id} name={number.username} 
+      age={number.age} gender={number.gender} reputation = {number.reputation} />
     )
     return (
-      <div className = 'research-summary'>
-        <div className='user-profile-wrapper'>
-            <div className="card mb-3" >
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img src={props.imgUrl} className="img-fluid rounded-start" alt="..."/>
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title" style={{textAlign:'left'}}>Title: {props.title}</h5>
-                    <p className="card-text" style={{textAlign:'left'}}>Type: {props.type}</p>
-                    <p className="card-text" style={{textAlign:'left'}}>Reward: {props.reward}</p>
-                    <p className="card-text" style={{textAlign:'left'}}>Date: {props.date}</p>
-                    <p className="card-text" style={{textAlign:'left'}}>Location: {props.location}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
+     
 
-        <hr />
+      <div className = 'research-summary'>
+       
+       <div className = 'user-profile-wrapper'>
+      <div className="col-md-12">
+ <div className="card user-card">
+     <div className="card-header">
+        
+     </div>
+     <div className="card-block">
+         <div className="user-image">
+             <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-radius" alt="User-Profile-Image" />
+         </div>
+         <h6 className="f-w-600 m-t-25 m-b-10">{props.title}</h6>
+         <p class="text-muted">{props.type} | {props.reward} Won | {props.date} {props.time}   |  {props.location}</p>
+         
+        </div>
+         
+ </div>
+ <h3>Applicants</h3>
+ <hr></hr>
+</div>
+
+      </div>
 
         {userCardList}
 
+    
       </div>
+     
     )
         }
 

@@ -5,22 +5,27 @@ function Researcher_Profile(props) {
   const { state: authState } = React.useContext(AuthContext);
  
     return (
-        <div>
-            <div style={{marginTop:'10%'}} className="card mb-3" >
-  <div className="row g-0">
-    <div className="col-md-4">
-      <img src={props.imgUrl}className="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div className="col-md-8">
-      <div className="card-body">
-        <h5 className="card-title" style={{textAlign:'left'}}>Username: {authState.username}</h5>
-       
         
-      </div>
-    </div>
-  </div>
-  </div>
+            <div className = 'user-profile-wrapper'>
+                 <div className="col-md-12">
+            <div className="card user-card">
+                <div className="card-header">
+                    <h5>Profile</h5>
+                </div>
+                <div className="card-block">
+                    <div className="user-image">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-radius" alt="User-Profile-Image" />
+                    </div>
+                    <h6 className="f-w-600 m-t-25 m-b-10">{authState.username}</h6>
+                    <p class="text-muted">Active | Male | Born 23.05.1992</p>
+                    <hr></hr>
+                   </div>
+                    
+            </div>
         </div>
+</div>
+        
+      
     )
         
     

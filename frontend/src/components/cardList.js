@@ -14,12 +14,17 @@ function CardList(props) {
             .then(response => response.json())
             .then(data => SetAnnouncements(data))
           },[])
+          console.log(announcements)
+          const initial = announcements[0]
+          console.log(initial)
           const routeList = announcements.map(
             (post) =>
             <Route path = {'/login-researcher'+ post.id} render = {() => <Research_Announcement_Detail
-                data={post} id={post.id}  title={post.title} type={post.type}
+                data={post} id={post.id} time={post.time} title={post.title} type={post.exp_type}
             reward={post.reward} descripton={post.description} date={post.date} location={post.location} />} />
         )
+        
+        
         return (
             <BrowserRouter>
             <div className='bulletin-container'>
@@ -30,9 +35,13 @@ function CardList(props) {
                  {announcements.map((announcement) =>
             <Link to = {'/login-researcher'+announcement.id}>
                 <div>
-                    <Card title = {announcement.title} type = {announcement.type} datetime = {announcement.date} 
-                    rewardeffort = {announcement.reward}/>
-                    <div className = 'horizontal_divider'/>
+                    <Card title = {announcement.title} type = {announcement.exp_type} 
+                    datetime = {announcement.date} location={announcement.location}
+                    app_count={announcement.applicants.length}
+                    description={announcement.description} time={announcement.time}
+                    rewardeffort = {announcement.reward}
+                    participant_number={announcement.participant_number}/>
+                    
                 </div>
                 
             </Link>)}
@@ -41,10 +50,11 @@ function CardList(props) {
                 </div>
                 
                    <Switch>
-                 <Route exact  path = '/login-researcher' render = {() => <Research_Announcement_Detail 
-                  />} />
+                
                    <div className='col'>
+                       <div className='row'>
                  {routeList}
+                 </div>
                  </div>
                        </Switch>
                </div>

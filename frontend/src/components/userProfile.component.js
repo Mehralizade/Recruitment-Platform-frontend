@@ -14,21 +14,23 @@ export default class UserProfile extends Component {
     render() {
         return (
             <div className = 'user-profile-wrapper'>
-                <div className="card mb-3">
-                <div className="row g-0">
-                    <div className="col-md-4">
-                    <img src={this.state.imgUrl} className="img-fluid rounded-start" alt="..."/>
-                    </div>
-                    <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title" style={{textAlign:'left'}}>Name: {this.state.name}</h5>
-                        <p className="card-text" style={{textAlign:'left'}}>Age: {this.state.age}</p>
-                        <p className="card-text" style={{textAlign:'left'}}>Gender: {this.state.gender}</p>
-                        <p className="card-text" style={{textAlign:'left'}}>Bank Account Number: {this.state.bankaccnum}</p>
-                    </div>
-                    </div>
+                 <div className="col-md-12">
+            <div className="card user-card">
+                <div className="card-header">
+                    <h5>Profile</h5>
                 </div>
-                </div>
+                <div className="card-block">
+                    <div className="user-image">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-radius" alt="User-Profile-Image" />
+                    </div>
+                    <h6 className="f-w-600 m-t-25 m-b-10">Alessa Robert</h6>
+                    <p class="text-muted">Active | Male | Born 23.05.1992</p>
+                    <hr></hr>
+                   </div>
+                    
+            </div>
+        </div>
+
             </div>
         );
     }

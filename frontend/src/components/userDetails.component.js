@@ -1,27 +1,68 @@
 import React, { Component } from "react";
-
-export default class UserDetails extends Component {
-    render() {
+import { Rating } from 'react-simple-star-rating'
+export default function UserDetails(props) {
+   
+   
+        function confirmHandler(event){
+            event.preventDefault();
+            
+            
+          
+            fetch('http://127.0.0.1:8000/api/posts/'+props.postId+'/',
+        {
+          method: 'PATCH',
+          body: JSON.stringify({confirmed_applicants:
+            props.id}),
+          headers: {
+            'Content-type':'application/json',
+          } 
+        }).then(resp=>console.log(resp)).then(data=>console.log(data))
+        
+        }
+        function declineHandler(event){
+            event.preventDefault();
+            
+            
+          
+            fetch('http://127.0.0.1:8000/api/posts/'+props.postId+'/',
+        {
+          method: 'PATCH',
+          body: JSON.stringify({declined_applicants:
+            props.id}),
+          headers: {
+            'Content-type':'application/json',
+          } 
+        }).then(resp=>console.log(resp)).then(data=>console.log(data))
+        
+        }
         return (
             <div className = 'user-details-wrapper'>
 
-                <div>
-                    Name
-                </div>
+                <th scope='row'>
+                   {props.name}
+                </th>
 
-                <div>
-                    Age
-                </div>
+                <td >
+                   {props.age}
+                </td>
 
-                <div>
-                    Gender
-                </div>
+                <td>
+                    {props.gender}
+                </td>
 
-                <div>
-                    Reputation
-                </div>
-
+                <td>
+                 <Rating ratingValue={props.reputation} />
+                </td>
+                <td>
+                    <form onSubmit={confirmHandler}>
+                    <button className='btn btn-primary'>Confirm</button>
+                    </form>
+                </td>
+                <td>
+                <form onSubmit={declineHandler}>
+                    <button className='btn btn-danger'>Decline</button>
+                    </form>
+                </td>
             </div>
         );
     }
-}

@@ -24,11 +24,12 @@ export default function ResearchersPage(props) {
     )
     const routeList = posts.map(
         (post) =>
-        <Route path = {'/experiment'+ post.id} render = {() => <Research_Summary title={post.title} type={post.type}
+        <Route path = {'/experiment'+ post.id} render = {() => <Research_Summary id={post.id} 
+      applicants={post.applicants} time={post.time} title={post.title} type={post.exp_type}
         reward={post.reward} date={post.date} location={post.location} />} />
     )
     return (
-        <div className = 'researchers-page' style={{marginTop:'12%'}}>
+        <div className = 'researchers-page' style={{marginTop:'5%'}}>
            
             <BrowserRouter>
 

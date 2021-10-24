@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 
  import { Rating } from 'react-simple-star-rating'
-
- export default function RatingComp() {
+ import { AuthContext } from "../App";
+ export default function RatingComp(props) {
+  const { state: authState } = React.useContext(AuthContext);
    const [rating, setRating] = useState(0)
    const [rating2, setRating2] = useState(0)
    const [rating3, setRating3] = useState(0)
@@ -32,6 +33,9 @@ import React, {useState} from 'react'
            criteria2: (rating2),
            criteria3: (rating3),
            overall_rating:(overall_rating),
+           rated: props.id,
+           rater: authState.userId,
+           
        }
 
        fetch('http://127.0.0.1:8000/api/ratings/',

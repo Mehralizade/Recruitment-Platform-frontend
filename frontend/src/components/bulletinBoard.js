@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import Filter from "./Filter";
 import UploadForm from "./UploadForm";
 import MyExperiments from "./myExperiments";
+import MyPage from "./myPage"
 import { AuthContext } from "../App";
 import Researcher_Profile from "./Researcher_Profile";
 import ResearchersPage from  "./researchersPage"
@@ -45,7 +46,7 @@ function BulletinBoard(props) {
       <li className="nav-item">
           <Link className="nav-link" to={"/upload"}>Upload</Link>
       </li></> :   <li className="nav-item">
-          <Link className="nav-link" to={"/login-" + props.type}> Applied Experiments</Link>
+          <Link className="nav-link" to={"/login-myPage"}> My Page</Link>
       </li> }
           </ul>
       </div>
@@ -57,7 +58,7 @@ function BulletinBoard(props) {
                         <Route  exact path={"/login-participant" }  render = {() =>   <CardList />}/>
                         <Route path={"/upload"} render = {() => <UploadForm />} />
                         <Route path={"/my-experiments"} render = {() => <ResearchersPage />} />
-                      
+                        <Route path={"/login-myPage"} render = {() => <MyPage />} />
                     </Switch>
   </BrowserRouter>
         <div className = 'main_page_wrapper'>
