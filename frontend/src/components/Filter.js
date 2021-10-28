@@ -35,7 +35,7 @@ function Filter(props) {
 
   
     return (
-        <div className='container' style={{marginLeft:'50%', marginBottom:'2%',}}>
+        <div className='container' style={{marginBottom:'2%', marginTop:'5%'}}>
             
           
             <form onSubmit={Handler}>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { AuthContext } from "../App";
+import profile from './profilepic.png';
 
 function Researcher_Profile(props) {
   const { state: authState } = React.useContext(AuthContext);
@@ -14,10 +15,10 @@ function Researcher_Profile(props) {
                 </div>
                 <div className="card-block">
                     <div className="user-image">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-radius" alt="User-Profile-Image" />
+                        <img src={profile} className="img-radius" alt="User-Profile-Image" />
                     </div>
                     <h6 className="f-w-600 m-t-25 m-b-10">{authState.username}</h6>
-                    <p class="text-muted">Active | Male | Born 23.05.1992</p>
+                    <p class="text-muted">TBD</p>
                     <hr></hr>
                    </div>
                     

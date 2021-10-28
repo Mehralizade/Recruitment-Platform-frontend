@@ -6,6 +6,7 @@ import Research_Summary from "./Research_Summary";
 import Card from './card.component';
 import Researcher_Profile from "./Researcher_Profile";
 import { AuthContext } from "../App";
+
 export default function ResearchersPage(props) {
     const [posts, setPosts] = useState([])
     const { state: authState } = React.useContext(AuthContext);
@@ -22,6 +23,9 @@ export default function ResearchersPage(props) {
             <Card title = {post.title + post.id} />
         </Link>
     )
+
+    experimentList.reverse()
+
     const routeList = posts.map(
         (post) =>
         <Route path = {'/experiment'+ post.id} render = {() => <Research_Summary id={post.id} 

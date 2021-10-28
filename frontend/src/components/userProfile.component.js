@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import profile from './profilepic.png';
 
 export default class UserProfile extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ export default class UserProfile extends Component {
                 </div>
                 <div className="card-block">
                     <div className="user-image">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" className="img-radius" alt="User-Profile-Image" />
+                        <img src={profile} className="img-radius" alt="User-Profile-Image" />
                     </div>
                     <h6 className="f-w-600 m-t-25 m-b-10">Alessa Robert</h6>
                     <p class="text-muted">Active | Male | Born 23.05.1992</p>

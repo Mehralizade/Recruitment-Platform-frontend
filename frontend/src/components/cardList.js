@@ -33,7 +33,7 @@ function CardList(props) {
             <div className = 'card_list_wrapper'>
 
                  {announcements.map((announcement) =>
-            <Link to = {'/login-researcher'+announcement.id}>
+            <Link style={{ textDecoration: 'none',}} to = {'/login-researcher'+announcement.id}>
                 <div>
                     <Card title = {announcement.title} type = {announcement.exp_type} 
                     datetime = {announcement.date} location={announcement.location}

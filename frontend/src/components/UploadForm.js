@@ -78,7 +78,7 @@ function UploadForm(props) {
       
         <div>
           
-  <div className='container' style={{marginLeft:'auto', width:'50%', marginTop:'10%'}}>
+  <div className='container' style={{ width:'100%', marginTop:'10%'}}>
         <div className='col-8'>
           
         

@@ -54,9 +54,9 @@ import React, {useState} from 'react'
      <div>
           <form onSubmit = {SubmitHandler}>
             <div className = 'rating-wrapper'>
-              <p>Criteria1: </p><Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
-              <p>Criteria2:</p> <Rating onClick={handleRating2} ratingValue={rating2} /* Rating Props */ />
-              <p>Criteria3: </p> <Rating onClick={handleRating3}  ratingValue={rating3} /* Rating Props */ />
+              <p>Communication: </p><Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
+              <p>Friendliness:</p> <Rating onClick={handleRating2} ratingValue={rating2} /* Rating Props */ />
+              <p>Completion: </p> <Rating onClick={handleRating3}  ratingValue={rating3} /* Rating Props */ />
               <button className='btn btn-success'>Rate</button>
             </div>
           </form>
