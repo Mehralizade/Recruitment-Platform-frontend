@@ -31,6 +31,9 @@ function Research_Announcement_Detail(props) {
         .then(response => response.json())
         .then(data => SetAnnouncement(data))
       },[])*/
+      
+      const [value, setValue] = useState(false)
+
     return (
       
         <div className='container-list' style={{
@@ -64,8 +67,8 @@ function Research_Announcement_Detail(props) {
             <div>
             {!authState.is_researcher ?
             <form onSubmit={ApplyHandler}>
-            <button className='btn btn-success'>Apply</button></form> :
-            <button className='btn btn-success' onSubmit={ApplyHandler}>Cannot apply</button>  }
+            <button className='btn btn-success' onClick = {() => setValue(true)}> {value ? "Applied" : "Apply"} </button></form> :
+            <div></div>  }
             </div>
            
           

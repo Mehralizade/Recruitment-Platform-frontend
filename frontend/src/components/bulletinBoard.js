@@ -63,15 +63,7 @@ function BulletinBoard(props) {
             <Route path={"/login-myPage"} render = {() => <MyPage />} />
         </Switch>
   </BrowserRouter>
-        <div className = 'main_page_wrapper'>
-                <div className='container'>
-                </div>
-                <div className = 'detail_box'>
-                    <div className='container' style={{marginTop:'18%', width:'100%', marginRight:'80%'}}>
-            
-                    </div> 
-                </div>
-        </div>
+        
     </div>
     )
 }
