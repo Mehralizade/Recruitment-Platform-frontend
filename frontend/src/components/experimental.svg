@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" version="1.1" viewBox="0 0 800.00001 800.00001" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="c" x1="437.11" x2="124.73" y1="402.86" y2="728.57" gradientUnits="userSpaceOnUse">
+   <stop stop-opacity=".42" offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <mask id="b" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="652.36" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="a" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+ </defs>
+ <g transform="translate(0 -252.36)" shape-rendering="auto">
+  <circle cx="400" cy="652.36" r="400" color="#000000" color-rendering="auto" fill="#1c8adb" image-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path transform="translate(0 252.36)" d="m489.35 140.41c-12.884 4e-3 -24.471 5.557-32.5 14.398l-419.57 419.57c67.084 118.58 170.35 237.77 400.8 224.72l139.51-139.51-85.232-104.22-39.793-48.664v-120.07l41.764-38.807v-29.031h-49.942l-74.553 74.627v-27.537l149.04-149.05c8.8396-8.0293 14.392-19.615 14.396-32.498 3e-3 -11.65-4.6237-22.823-12.861-31.061-8.2376-8.2376-19.411-12.862-31.061-12.859z" color="#000000" color-rendering="auto" fill="url(#c)" image-rendering="auto" mask="url(#a)" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  <path d="m489.35 392.77a43.91 43.91 0 0 0 -43.895 43.922 43.91 43.91 0 0 0 43.895 43.895 43.91 43.91 0 0 0 43.922 -43.895 43.91 43.91 0 0 0 -43.922 -43.922zm0 18.938a24.969 24.969 0 0 1 24.984 24.984 24.969 24.969 0 0 1 -24.984 24.957 24.969 24.969 0 0 1 -24.957 -24.957 24.969 24.969 0 0 1 24.957 -24.984zm-93.837 79.214a28.413 28.413 0 0 0 -28.42 28.42 28.413 28.413 0 0 0 28.42 28.42 28.413 28.413 0 0 0 28.393 -28.42 28.413 28.413 0 0 0 -28.393 -28.42zm-73.034 80.226v27.754h7.8308v-18.085h31.35v178.27l-39.767 48.636-85.233 104.22h340.94l-85.233-104.22-39.793-48.663v-178.24h33.934v19.364h7.8308v-29.033h-49.942v190.39l40.299 49.302 77.562 94.875h-310.27l77.562-94.875 40.299-49.276v-190.42h-47.358z" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" mask="url(#b)" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ </g>
+</svg>

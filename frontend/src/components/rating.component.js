@@ -8,7 +8,7 @@ import React, {useState} from 'react'
    const [rating2, setRating2] = useState(0)
    const [rating3, setRating3] = useState(0)
 
-
+  const [value, setValue] = useState(false)
    // Catch Rating value
    const handleRating = (rate) => {
      setRating(rate)
@@ -54,10 +54,10 @@ import React, {useState} from 'react'
      <div>
           <form onSubmit = {SubmitHandler}>
             <div className = 'rating-wrapper'>
-              <p>Communication: </p><Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
-              <p>Friendliness:</p> <Rating onClick={handleRating2} ratingValue={rating2} /* Rating Props */ />
-              <p>Completion: </p> <Rating onClick={handleRating3}  ratingValue={rating3} /* Rating Props */ />
-              <button className='btn btn-success'>Rate</button>
+              <p>Punctuality: </p><Rating onClick={handleRating} ratingValue={rating} /* Rating Props */ />
+              <p>Compliance:</p> <Rating onClick={handleRating2} ratingValue={rating2} /* Rating Props */ />
+              <p>Experiment Completion: </p> <Rating onClick={handleRating3}  ratingValue={rating3} /* Rating Props */ />
+              <button className='btn btn-success' onClick = {() => setValue(true)}> {value ? "Rated" : "Rate"}</button>
             </div>
           </form>
      </div>

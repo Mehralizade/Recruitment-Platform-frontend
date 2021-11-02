@@ -20,7 +20,9 @@ export default function ResearchersPage(props) {
         (post) =>
         
         <Link to = {'/experiment' + post.id}>
-            <Card title = {post.title + post.id} />
+            <Card title = {post.title} datetime={post.date} type={post.exp_type} location={post.location}
+            rewardeffort={post.reward} time={post.time} participant_number={post.participant_number} 
+            confirmed_applicant={post.confirmed_applicants.length} />
         </Link>
     )
 
@@ -29,6 +31,7 @@ export default function ResearchersPage(props) {
     const routeList = posts.map(
         (post) =>
         <Route path = {'/experiment'+ post.id} render = {() => <Research_Summary id={post.id} 
+        declined_applicants={post.declined_applicants} confirmed_applicants={post.confirmed_applicants}
       applicants={post.applicants} time={post.time} title={post.title} type={post.exp_type}
         reward={post.reward} date={post.date} location={post.location} />} />
     )

@@ -5,7 +5,9 @@ function Filter(props) {
   const SettingRef = useRef();
   const ValueRef = useRef();
   
-  
+  const [setting, setSetting] = useState('')
+  const [date, setDate] = useState('')
+  const [reward, setReward] = useState('')
 
 
   function Handler(event){
@@ -15,22 +17,25 @@ function Filter(props) {
     const enteredAscending = AscendingRef.current.value
    const  enteredOnline = SettingRef.current.value
     const enteredValue = ValueRef.current.value
-
+  setSetting(enteredOnline)
+  setDate(enteredValue)
+  setReward(enteredAscending)
     const FilterData = {
       setting: enteredOnline,
       date: enteredValue,
       reward: enteredAscending,
       
-  }
-  console.log('http://127.0.0.1:8000/api/posts?reward='+FilterData.reward+"&"+"setting="+FilterData.setting)
-  fetch('http://127.0.0.1:8000/api/posts?reward='+FilterData.reward+"&"+"setting="+FilterData.setting).
-  then(response => response.json()).then(data=>props.data(data))
+  }}
+  console.log('http://127.0.0.1:8000/api/posts?reward='+reward+"&"+"setting="+setting)
+  useEffect(() => {
+  fetch('http://127.0.0.1:8000/api/posts?reward='+reward+"&"+"setting="+setting+"&date="+date).
+  then(response => response.json()).then(data=>console.log(data)) }, [])
 
   
 
 
 
-  }
+  
   
 
   

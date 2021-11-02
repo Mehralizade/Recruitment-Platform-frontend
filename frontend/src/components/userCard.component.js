@@ -4,16 +4,18 @@ import RatingComp from './rating.component';
 
 
 export default function UserCard(props) {
-    var isConfirmed = false
+    const [toggle, setToggle] = useState(true);
+    const toggleChecked = () => setToggle(toggle => !toggle);
     return (
         <div className = 'user-card-wrapper'>
-            <div className = 'toggler-wrapper'>
-                User_ID
+            <div className = 'toggler-wrapper' onClick = {toggleChecked}>
+                {toggle && 'Applicant Details (Click to rate applicant)'}
+                {!toggle && 'Applicant Rating (Click for applicant details)'}
             </div>
             <div>
-                <UserDetails id={props.id} postId={props.postId} name={props.name} age={props.age} gender={props.gender}
-                reputation={props.reputation} />
-                {isConfirmed && <RatingComp id={props.id} />}
+                {toggle && <UserDetails id={props.id} postId={props.postId} name={props.name} age={props.age} gender={props.gender}
+                reputation={props.reputation} />}
+                {!toggle && <RatingComp id={props.id} />}
             </div>
         </div>
     )

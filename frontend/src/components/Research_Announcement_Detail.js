@@ -39,10 +39,16 @@ function Research_Announcement_Detail(props) {
         <div className='container-list' style={{
         maxWidth:'90%', marginRight:'10%', marginTop:'5%', marginBottom:'45%',  itemAlign:'left'}}>
 <img src={logo} style={{textAlign:'left', height:'120px',}}className="img-fluid rounded-start" alt="..."/>
-            <h3 style={{textAlign:'left'}}>{props.title}</h3>
-            
+         
+         <div className='row'> <div className='col-4'><h3 style={{textAlign:'left'}}>{props.title}</h3></div>
+            <div className='col-1'>{!authState.is_researcher ?
+            <form onSubmit={ApplyHandler}>
+            <button className='btn btn-success' style={{width:'100px', borderRadius:'4px'}}
+             onClick = {() => setValue(true)}> {value ? "Applied" : "Apply"} 
+            </button></form> :
+            <div></div>  }</div>  
               
-              
+              </div>
            <ul className="list-inline" style={{textAlign:'left'}}>
              <li>
               <p className='card-text'><small class="text-muted">{props.time}</small></p> </li>
@@ -65,10 +71,7 @@ function Research_Announcement_Detail(props) {
             <h6 style={{textAlign:'left'}}>Applicants required:</h6><p style={{textAlign:'left'}}>{props.applicantNumber}</p>
             <h6 style={{textAlign:'left'}}>Additional Info:</h6><p style={{textAlign:'left'}}>{announcement.additionalInfo}</p>
             <div>
-            {!authState.is_researcher ?
-            <form onSubmit={ApplyHandler}>
-            <button className='btn btn-success' onClick = {() => setValue(true)}> {value ? "Applied" : "Apply"} </button></form> :
-            <div></div>  }
+            
             </div>
            
           

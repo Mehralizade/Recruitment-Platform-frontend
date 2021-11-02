@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import { AuthContext } from "../App";
 function UploadForm(props) {
@@ -16,7 +16,7 @@ function UploadForm(props) {
   const AdditionalInfoRef = useRef();
   const SettingRef = useRef();
   const ParticipantNumberRef = useRef();
-
+console.log(authState.userId)
    
     function SubmitHandler(event){
       event.preventDefault();
@@ -43,7 +43,7 @@ function UploadForm(props) {
     const AnnouncementData = {
       setting: EnteredSetting,
       title: EnteredTitle,
-      type: EnteredType,
+      
       description: EnteredDescription,
       
       exp_type: EnteredType,
@@ -57,6 +57,7 @@ function UploadForm(props) {
       additional_info:EnteredAdditionalInfo,
       author: authState.userId,
     };
+    
     console.log(AnnouncementData)
   //props.onAddAnnouncement(AnnouncementData)
 
@@ -73,7 +74,7 @@ function UploadForm(props) {
 
 
     const ParticipantNumber = useRef()
-
+const [value, setValue] = useState(false)
     return (
       
         <div>
@@ -155,7 +156,7 @@ function UploadForm(props) {
     <textarea className="form-control" ref={AdditionalInfoRef} id="exampleFormControlTextarea1" rows="5" placeholder='Please provide any additional information here..'></textarea>
   </div>
   <div className="col-12">
-    <button type="submit" className="btn btn-primary">Submit</button>
+    <button type="submit" className="btn btn-primary"  onClick = {() => setValue(true)}> {value ? "Submitted" : "Submit"}  </button>
   </div>
 </form>
 </div>
